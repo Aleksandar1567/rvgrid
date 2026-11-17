@@ -1,0 +1,52 @@
+[*]
+[*] GTKWave layout for rvgrid waveforms. Usage:
+[*]   python -m rvgrid sim hello --waves
+[*]   gtkwave build/sim/verilator-waves/runs/hello/dump.vcd docs/hello.gtkw
+[*]
+[timestart] 0
+@200
+-host port (loads L1, releases the core)
+@28
+rvgrid_soc.clk
+rvgrid_soc.rst
+rvgrid_soc.host__cyc
+rvgrid_soc.host__we
+@22
+rvgrid_soc.host__adr[29:0]
+rvgrid_soc.host__dat_w[31:0]
+@28
+rvgrid_soc.host__ack
+rvgrid_soc.tile0.cpu.hold
+@200
+-core instruction fetch (ibus, word address)
+@28
+rvgrid_soc.tile0.cpu.ibus__cyc
+@22
+rvgrid_soc.tile0.cpu.ibus__adr[29:0]
+rvgrid_soc.tile0.cpu.ibus__dat_r[31:0]
+@28
+rvgrid_soc.tile0.cpu.ibus__ack
+@200
+-core data (dbus, word address)
+@28
+rvgrid_soc.tile0.cpu.dbus__cyc
+rvgrid_soc.tile0.cpu.dbus__we
+@22
+rvgrid_soc.tile0.cpu.dbus__adr[29:0]
+rvgrid_soc.tile0.cpu.dbus__sel[3:0]
+rvgrid_soc.tile0.cpu.dbus__dat_w[31:0]
+rvgrid_soc.tile0.cpu.dbus__dat_r[31:0]
+@28
+rvgrid_soc.tile0.cpu.dbus__ack
+rvgrid_soc.tile0.arbiter.grant
+rvgrid_soc.tile0.timer.irq
+@200
+-pins
+@28
+rvgrid_soc.uart_tx
+@22
+rvgrid_soc.leds[7:0]
+@28
+rvgrid_soc.sim_done
+@22
+rvgrid_soc.sim_code[31:0]

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="948" height="196" viewBox="0 0 948 196"><style>
+text { font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; fill: #1f2328; }
+.label { font-weight: 600; }
+.wave { stroke: #0969da; stroke-width: 1.5; fill: none; }
+.bus  { stroke: #8250df; stroke-width: 1.2; fill: #8250df14; }
+.grid { stroke: #d0d7de; stroke-width: 0.5; }
+.idle { stroke: #8c959f; stroke-width: 1; stroke-dasharray: 3 3; }
+.title { font-size: 13px; font-weight: 700; }
+@media (prefers-color-scheme: dark) {
+  text { fill: #e6edf3; }
+  .wave { stroke: #4493f8; }
+  .bus  { stroke: #ab7df8; fill: #ab7df81f; }
+  .grid { stroke: #30363d; }
+  .idle { stroke: #6e7681; }
+}
+</style>
+<text class="title" x="8" y="18">Boot: the host clears HOLD and the core fetches _start from 0x0, one instruction every 2 cycles</text>
+<line class="grid" x1="190" y1="26" x2="190" y2="188"/>
+<line class="grid" x1="224" y1="26" x2="224" y2="188"/>
+<line class="grid" x1="258" y1="26" x2="258" y2="188"/>
+<line class="grid" x1="292" y1="26" x2="292" y2="188"/>
+<line class="grid" x1="326" y1="26" x2="326" y2="188"/>
+<line class="grid" x1="360" y1="26" x2="360" y2="188"/>
+<line class="grid" x1="394" y1="26" x2="394" y2="188"/>
+<line class="grid" x1="428" y1="26" x2="428" y2="188"/>
+<line class="grid" x1="462" y1="26" x2="462" y2="188"/>
+<line class="grid" x1="496" y1="26" x2="496" y2="188"/>
+<line class="grid" x1="530" y1="26" x2="530" y2="188"/>
+<line class="grid" x1="564" y1="26" x2="564" y2="188"/>
+<line class="grid" x1="598" y1="26" x2="598" y2="188"/>
+<line class="grid" x1="632" y1="26" x2="632" y2="188"/>
+<line class="grid" x1="666" y1="26" x2="666" y2="188"/>
+<line class="grid" x1="700" y1="26" x2="700" y2="188"/>
+<line class="grid" x1="734" y1="26" x2="734" y2="188"/>
+<line class="grid" x1="768" y1="26" x2="768" y2="188"/>
+<line class="grid" x1="802" y1="26" x2="802" y2="188"/>
+<line class="grid" x1="836" y1="26" x2="836" y2="188"/>
+<line class="grid" x1="870" y1="26" x2="870" y2="188"/>
+<line class="grid" x1="904" y1="26" x2="904" y2="188"/>
+<line class="grid" x1="938" y1="26" x2="938" y2="188"/>
+<text class="label" x="8" y="46.0">clk</text>
+<polyline class="wave" points="190,50 190,34 207.0,34 207.0,50 224,50 224,50 224,34 241.0,34 241.0,50 258,50 258,50 258,34 275.0,34 275.0,50 292,50 292,50 292,34 309.0,34 309.0,50 326,50 326,50 326,34 343.0,34 343.0,50 360,50 360,50 360,34 377.0,34 377.0,50 394,50 394,50 394,34 411.0,34 411.0,50 428,50 428,50 428,34 445.0,34 445.0,50 462,50 462,50 462,34 479.0,34 479.0,50 496,50 496,50 496,34 513.0,34 513.0,50 530,50 530,50 530,34 547.0,34 547.0,50 564,50 564,50 564,34 581.0,34 581.0,50 598,50 598,50 598,34 615.0,34 615.0,50 632,50 632,50 632,34 649.0,34 649.0,50 666,50 666,50 666,34 683.0,34 683.0,50 700,50 700,50 700,34 717.0,34 717.0,50 734,50 734,50 734,34 751.0,34 751.0,50 768,50 768,50 768,34 785.0,34 785.0,50 802,50 802,50 802,34 819.0,34 819.0,50 836,50 836,50 836,34 853.0,34 853.0,50 870,50 870,50 870,34 887.0,34 887.0,50 904,50 904,50 904,34 921.0,34 921.0,50 938,50"/>
+<text class="label" x="8" y="72.0">core hold</text>
+<polyline class="wave" points="190,60 224,60 224,60 258,60 258,76 292,76 292,76 326,76 326,76 360,76 360,76 394,76 394,76 428,76 428,76 462,76 462,76 496,76 496,76 530,76 530,76 564,76 564,76 598,76 598,76 632,76 632,76 666,76 666,76 700,76 700,76 734,76 734,76 768,76 768,76 802,76 802,76 836,76 836,76 870,76 870,76 904,76 904,76 938,76"/>
+<text class="label" x="8" y="98.0">ibus.cyc/stb</text>
+<polyline class="wave" points="190,102 224,102 224,102 258,102 258,102 292,102 292,102 326,102 326,86 360,86 360,86 394,86 394,86 428,86 428,86 462,86 462,86 496,86 496,86 530,86 530,86 564,86 564,86 598,86 598,86 632,86 632,86 666,86 666,86 700,86 700,86 734,86 734,86 768,86 768,86 802,86 802,86 836,86 836,86 870,86 870,86 904,86 904,86 938,86"/>
+<text class="label" x="8" y="124.0">ibus.adr</text>
+<line class="idle" x1="190" y1="120.0" x2="326" y2="120.0"/>
+<polygon class="bus" points="328,120.0 331,112 389,112 392,120.0 389,128 331,128"/>
+<text x="360.0" y="124.0" text-anchor="middle">0</text>
+<polygon class="bus" points="396,120.0 399,112 457,112 460,120.0 457,128 399,128"/>
+<text x="428.0" y="124.0" text-anchor="middle">4</text>
+<polygon class="bus" points="464,120.0 467,112 525,112 528,120.0 525,128 467,128"/>
+<text x="496.0" y="124.0" text-anchor="middle">8</text>
+<polygon class="bus" points="532,120.0 535,112 593,112 596,120.0 593,128 535,128"/>
+<text x="564.0" y="124.0" text-anchor="middle">c</text>
+<polygon class="bus" points="600,120.0 603,112 661,112 664,120.0 661,128 603,128"/>
+<text x="632.0" y="124.0" text-anchor="middle">10</text>
+<polygon class="bus" points="668,120.0 671,112 729,112 732,120.0 729,128 671,128"/>
+<text x="700.0" y="124.0" text-anchor="middle">14</text>
+<polygon class="bus" points="736,120.0 739,112 797,112 800,120.0 797,128 739,128"/>
+<text x="768.0" y="124.0" text-anchor="middle">18</text>
+<polygon class="bus" points="804,120.0 807,112 865,112 868,120.0 865,128 807,128"/>
+<text x="836.0" y="124.0" text-anchor="middle">1c</text>
+<polygon class="bus" points="872,120.0 875,112 933,112 936,120.0 933,128 875,128"/>
+<text x="904.0" y="124.0" text-anchor="middle">20</text>
+<text class="label" x="8" y="150.0">ibus.ack</text>
+<polyline class="wave" points="190,154 224,154 224,154 258,154 258,154 292,154 292,154 326,154 326,154 360,154 360,138 394,138 394,154 428,154 428,138 462,138 462,154 496,154 496,138 530,138 530,154 564,154 564,138 598,138 598,154 632,154 632,138 666,138 666,154 700,154 700,138 734,138 734,154 768,154 768,138 802,138 802,154 836,154 836,138 870,138 870,154 904,154 904,138 938,138"/>
+<text class="label" x="8" y="176.0">ibus.dat_r</text>
+<line class="idle" x1="190" y1="172.0" x2="360" y2="172.0"/>
+<polygon class="bus" points="362,172.0 365,164 389,164 392,172.0 389,180 365,180"/>
+<text x="377.0" y="176.0" text-anchor="middle">93</text>
+<line class="idle" x1="394" y1="172.0" x2="428" y2="172.0"/>
+<polygon class="bus" points="430,172.0 433,164 457,164 460,172.0 457,180 433,180"/>
+<text x="445.0" y="176.0" text-anchor="middle">113</text>
+<line class="idle" x1="462" y1="172.0" x2="496" y2="172.0"/>
+<polygon class="bus" points="498,172.0 501,164 525,164 528,172.0 525,180 501,180"/>
+<text x="513.0" y="176.0" text-anchor="middle">193</text>
+<line class="idle" x1="530" y1="172.0" x2="564" y2="172.0"/>
+<polygon class="bus" points="566,172.0 569,164 593,164 596,172.0 593,180 569,180"/>
+<text x="581.0" y="176.0" text-anchor="middle">213</text>
+<line class="idle" x1="598" y1="172.0" x2="632" y2="172.0"/>
+<polygon class="bus" points="634,172.0 637,164 661,164 664,172.0 661,180 637,180"/>
+<text x="649.0" y="176.0" text-anchor="middle">293</text>
+<line class="idle" x1="666" y1="172.0" x2="700" y2="172.0"/>
+<polygon class="bus" points="702,172.0 705,164 729,164 732,172.0 729,180 705,180"/>
+<text x="717.0" y="176.0" text-anchor="middle">313</text>
+<line class="idle" x1="734" y1="172.0" x2="768" y2="172.0"/>
+<polygon class="bus" points="770,172.0 773,164 797,164 800,172.0 797,180 773,180"/>
+<text x="785.0" y="176.0" text-anchor="middle">393</text>
+<line class="idle" x1="802" y1="172.0" x2="836" y2="172.0"/>
+<polygon class="bus" points="838,172.0 841,164 865,164 868,172.0 865,180 841,180"/>
+<text x="853.0" y="176.0" text-anchor="middle">413</text>
+<line class="idle" x1="870" y1="172.0" x2="904" y2="172.0"/>
+<polygon class="bus" points="906,172.0 909,164 933,164 936,172.0 933,180 909,180"/>
+<text x="921.0" y="176.0" text-anchor="middle">493</text>
+</svg>
