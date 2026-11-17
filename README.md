@@ -1,5 +1,6 @@
 # rvgrid
 
+[![CI](https://github.com/Aleksandar1567/rvgrid/actions/workflows/ci.yml/badge.svg)](https://github.com/Aleksandar1567/rvgrid/actions/workflows/ci.yml)
 [![RISC-V](https://img.shields.io/badge/RISC--V-RV32I-283272)](vendor/vexriscv/README.md)
 [![Python](https://img.shields.io/badge/python-3.10%2B-3776ab)](pyproject.toml)
 [![Amaranth](https://img.shields.io/badge/HDL-Amaranth%200.5-6f42c1)](https://amaranth-lang.org)

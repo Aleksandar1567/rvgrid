@@ -1,0 +1,31 @@
+# Unit tests: the RTL in Amaranth's Python simulator. Needs only pip packages,
+# so it runs on every push in about a minute. The system tests (Verilator +
+# RISC-V GCC) skip themselves here; run them locally with `pytest`.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - name: Install
+        run: pip install -e '.[dev]'
+      - name: Unit tests
+        run: pytest tests/unit -v
+      - name: Generators run (Verilog, soc.h, diagrams without external tools)
+        run: |
+          python -m rvgrid gen
+          python -m rvgrid diagram --no-netlist
+          git diff --exit-code -- README.md docs/generated
