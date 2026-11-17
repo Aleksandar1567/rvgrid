@@ -1,5 +1,12 @@
 # rvgrid
 
+[![RISC-V](https://img.shields.io/badge/RISC--V-RV32I-283272)](vendor/vexriscv/README.md)
+[![Python](https://img.shields.io/badge/python-3.10%2B-3776ab)](pyproject.toml)
+[![Amaranth](https://img.shields.io/badge/HDL-Amaranth%200.5-6f42c1)](https://amaranth-lang.org)
+[![cocotb](https://img.shields.io/badge/tests-cocotb%202.1%20%2B%20pytest-2ea44f)](docs/04-simulation.md)
+[![Simulators](https://img.shields.io/badge/sim-Verilator%20%7C%20Icarus-orange)](docs/04-simulation.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 A custom RISC-V system-on-chip written in **Python** with
 [Amaranth HDL](https://amaranth-lang.org), running C programs on a
 [VexRiscv](https://github.com/SpinalHDL/VexRiscv) core. It is simulated with
@@ -84,7 +91,8 @@ Register tables: [docs/generated/architecture.md](docs/generated/architecture.md
   four programs: `hello`, `memtest`, `timer_irq`, `traps`.
 - **Tests** (23): unit tests in Amaranth's Python simulator (no external
   tools, seconds), and system tests booting real firmware in Verilator and
-  Icarus, including a determinism test.
+  Icarus, including a determinism test. Both simulators count the same
+  27685 cycles for `hello`.
 - **Diagrams**: Mermaid block diagram + memory map (above), waveforms and
   netlist schematics, all generated from the code and the simulator.
 - **FPGA estimate**: `python -m rvgrid synth` → Yosys + nextpnr on an ECP5-25F.
