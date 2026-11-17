@@ -12,12 +12,22 @@ serves every program and every test.
 import json
 import os
 import shutil
+import sys
 from pathlib import Path
 
 from ..config import SoCConfig, region
-from ..gen import BUILD, TOP_NAME, generate_rtl
+from ..gen import BUILD, ROOT, TOP_NAME, generate_rtl
 
 SIMULATORS = ("verilator", "icarus")
+
+# The cocotb test module (rvgrid.sim.harness) is imported by the Python that
+# the simulator embeds. OSS CAD Suite's `vvp` wrapper sets PYTHONHOME to its
+# own Python, so that interpreter never reads the venv's .pth files and can't
+# see the editable install of rvgrid. cocotb hands sys.path over as
+# PYTHONPATH, so putting the repo root on it makes the package importable
+# no matter how we were started (`pytest`, `python -m pytest`, `rvgrid sim`).
+if str(ROOT) not in sys.path:
+    sys.path.append(str(ROOT))
 
 BUILD_ARGS = {
     "verilator": [
